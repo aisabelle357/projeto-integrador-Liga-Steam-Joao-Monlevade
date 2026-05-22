@@ -1,396 +1,490 @@
-/* ========================================================
-   RESET BÁSICO
-======================================================== */
+<style>
 
-* {
+/* ===== RESET BÁSICO — não precisa mexer ===== */
+
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ========================================================
-   BODY
-======================================================== */
-
-body {
+body{
   font-family: Arial, sans-serif;
   line-height: 1.6;
-
-  background: linear-gradient(to bottom, #081c15, #1b4332);
-
-  color: #ffffff;
 }
 
-/* ========================================================
-   HEADER / HERO
-======================================================== */
+/* =====================================================
+   AQUI COMEÇA O QUE É SEU
+===================================================== */
 
-header {
-  background: linear-gradient(to right, #1b4332, #2d6a4f);
+/* ===== VARIÁVEIS ===== */
 
-  color: white;
+:root{
+  --bg: #1A1A1A;
+  --primary: #00FFC8;
+  --white: #FFFFFF;
+  --text: #D5DBDB;
+
+  --glass: rgba(255,255,255,0.05);
+  --border: rgba(255,255,255,0.10);
+
+  --shadow:
+    0 0 8px rgba(0,255,200,0.35),
+    0 0 20px rgba(0,255,200,0.15);
+
+  --gradient:
+    linear-gradient(
+      135deg,
+      rgba(0,255,200,0.10),
+      rgba(255,255,255,0.02)
+    );
+}
+
+/* ===== BODY ===== */
+
+body{
+  background:
+    radial-gradient(circle at top, rgba(0,255,200,0.08), transparent 30%),
+    radial-gradient(circle at bottom, rgba(0,255,200,0.05), transparent 25%),
+    var(--bg);
+
+  color: var(--white);
+
+  font-family: 'Montserrat', sans-serif;
+
+  min-height: 100vh;
+
+  padding: 40px 20px;
+
+  overflow-x: hidden;
+}
+
+/* ===== CABEÇALHO ===== */
+
+header{
 
   text-align: center;
 
-  padding: 90px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  padding: 40px 20px;
 }
 
-header h1 {
-  font-size: 3.2rem;
+header h1{
 
-  margin-bottom: 20px;
+  font-size: clamp(2.5rem, 5vw, 5rem);
 
-  letter-spacing: 1px;
+  line-height: 1.1;
 
-  line-height: 1.2;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
 }
 
-header p {
-  max-width: 750px;
+header p{
+
+  max-width: 900px;
 
   margin: 0 auto;
 
-  font-size: 1.15rem;
+  color: var(--text);
 
-  color: #d8f3dc;
-}
-
-/* ========================================================
-   MAIN
-======================================================== */
-
-main {
-  max-width: 1100px;
-
-  margin: 60px auto;
-
-  padding: 20px;
-}
-
-/* ========================================================
-   IMAGEM GLOBAL
-======================================================== */
-
-img {
-  max-width: 100%;
-}
-
-/* ========================================================
-   SEÇÃO DESTAQUE
-======================================================== */
-
-.destaque {
-  background: rgba(255, 255, 255, 0.06);
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  border-left: 6px solid #22c55e;
-
-  border-radius: 28px;
-
-  backdrop-filter: blur(12px);
-
-  padding: 45px;
-
-  color: white;
-
-  transition: 0.4s ease;
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.25),
-    0 0 30px rgba(34, 197, 94, 0.05);
-}
-
-/* ========================================================
-   EFEITO HOVER NA SEÇÃO
-======================================================== */
-
-.destaque:hover {
-  background: rgba(26, 95, 122, 0.18);
-
-  transform: translateY(-4px);
-
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.3),
-    0 0 25px rgba(26, 95, 122, 0.25);
-}
-
-/* ========================================================
-   TÍTULOS
-======================================================== */
-
-.destaque h2 {
-  font-size: 2.5rem;
-
-  line-height: 1.3;
-
-  margin-bottom: 20px;
-
-  color: #ffffff;
-
-  transition: 0.3s ease;
-}
-
-.destaque:hover h2 {
-  color: #bbf7d0;
-}
-
-section h2 {
-  color: #d8f3dc;
-}
-
-/* ========================================================
-   SUBTÍTULO
-======================================================== */
-
-.subtitulo {
-  font-size: 1.2rem;
-
-  color: #86efac;
-
-  margin-bottom: 35px;
-
-  font-weight: 600;
-
-  letter-spacing: 0.5px;
-}
-
-/* ========================================================
-   FOTO PRINCIPAL
-======================================================== */
-
-.destaque img {
-  width: 55%;
-
-  max-width: 480px;
-
-  height: auto;
-
-  display: block;
-
-  margin: 40px auto;
-
-  border-radius: 24px;
-
-  object-fit: cover;
-
-  border: 3px solid rgba(255, 255, 255, 0.08);
-
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.35),
-    0 0 25px rgba(34, 197, 94, 0.15);
-
-  transition: 0.4s ease;
-}
-
-/* ========================================================
-   EFEITO DA FOTO
-======================================================== */
-
-.destaque img:hover {
-  transform: scale(1.02);
-
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.4),
-    0 0 35px rgba(34, 197, 94, 0.25);
-}
-
-/* ========================================================
-   PARÁGRAFOS
-======================================================== */
-
-.destaque p {
-  font-size: 1.05rem;
-
-  line-height: 1.9;
-
-  margin-bottom: 22px;
-
-  color: #e5e7eb;
-
-  text-align: justify;
-
-  transition: 0.3s ease;
-}
-
-.destaque:hover p {
-  color: #f5ebe0;
-}
-
-/* ========================================================
-   CARDS
-======================================================== */
-
-.dados {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 22px;
-
-  margin: 45px 0;
-}
-
-.card {
-  flex: 1;
-
-  min-width: 220px;
-
-  background: linear-gradient(135deg, #14532d, #166534);
-
-  padding: 30px;
-
-  border-radius: 22px;
-
-  text-align: center;
-
-  transition: 0.3s ease;
-
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
-
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-}
-
-.card h3 {
-  font-size: 2.2rem;
-
-  color: #bbf7d0;
-
-  margin-bottom: 12px;
-}
-
-.card p {
-  margin: 0;
-
-  color: #f0fdf4;
-
-  text-align: center;
-}
-
-/* ========================================================
-   FRASE DE IMPACTO
-======================================================== */
-
-blockquote {
-  margin: 45px 0;
-
-  padding: 30px;
-
-  border-left: 5px solid #22c55e;
-
-  background: rgba(255, 255, 255, 0.05);
-
-  border-radius: 14px;
-
-  font-size: 1.25rem;
-
-  font-style: italic;
-
-  color: #dcfce7;
+  font-size: 1.1rem;
 
   line-height: 1.8;
 }
 
-/* ========================================================
-   LISTA
-======================================================== */
+/* ===== LINHA DECORATIVA ===== */
 
-.destaque ul {
-  margin: 35px 0;
+.line{
 
-  padding-left: 0;
+  width: 100%;
+
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--primary),
+    transparent
+  );
+
+  box-shadow: var(--shadow);
 }
 
-.destaque li {
-  list-style: none;
+/* ===== CONTEÚDO PRINCIPAL ===== */
 
-  position: relative;
+main{
 
-  padding-left: 32px;
+  max-width: 1200px;
 
-  margin-bottom: 16px;
+  margin: 0 auto;
 
-  font-size: 1.05rem;
+  display: flex;
 
-  color: #d1fae5;
+  flex-direction: column;
+
+  gap: 50px;
 }
 
-.destaque li::before {
-  content: "✔";
+/* ===== IMAGEM ===== */
 
-  position: absolute;
+img{
 
-  left: 0;
+ width: 80%;
 
-  color: #22c55e;
+ height: 400px;
 
-  font-weight: bold;
+ object-fit: cover;
+
+ display: block;
+
+ margin: 0 auto;
+
+ border-radius: 20px;
 }
 
-/* ========================================================
-   BOTÃO
-======================================================== */
+/* ===== FRASE IMPACTO ===== */
 
-.botao {
-  display: inline-block;
-
-  margin-top: 25px;
-
-  background: linear-gradient(90deg, #22c55e, #16a34a);
-
-  color: white;
-
-  text-decoration: none;
-
-  padding: 15px 34px;
-
-  border-radius: 999px;
-
-  font-weight: bold;
-
-  letter-spacing: 0.5px;
-
-  transition: 0.3s ease;
-
-  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
-}
-
-.botao:hover {
-  transform: scale(1.05);
-
-  box-shadow: 0 10px 28px rgba(34, 197, 94, 0.5);
-}
-
-/* ========================================================
-   ESPAÇAMENTO ENTRE SEÇÕES
-======================================================== */
-
-section {
-  margin-top: 45px;
-}
-
-/* ========================================================
-   FOOTER
-======================================================== */
-
-footer {
-  background: linear-gradient(90deg, #0b3d2e, #14532d);
-
-  color: #d1fae5;
+.impact{
 
   text-align: center;
 
-  padding: 22px;
+  padding: 30px;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.03);
+
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 0 30px rgba(0,255,200,0.08);
+}
+
+.impact p{
+
+  font-size: clamp(1.2rem, 2vw, 2rem);
+
+  font-style: italic;
+
+  color: var(--primary);
+
+  text-shadow:
+    0 0 10px rgba(0,255,200,0.5),
+    0 0 20px rgba(0,255,200,0.3);
+}
+
+/* ===== CARDS ===== */
+
+.cards{
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.card{
+
+  background: var(--glass);
+
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(18px);
+
+  border-radius: 24px;
+
+  padding: 35px 28px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition: 0.4s ease;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.25);
+}
+
+.card::before{
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: var(--gradient);
+
+  opacity: 0.8;
+
+  pointer-events: none;
+}
+
+.card:hover{
+
+  transform: translateY(-8px);
+
+  border-color: rgba(0,255,200,0.4);
+
+  box-shadow:
+    0 0 20px rgba(0,255,200,0.15),
+    0 0 40px rgba(0,255,200,0.08);
+}
+
+.card-content{
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.icon{
+
+  font-size: 2rem;
+
+  color: var(--primary);
+
+  margin-bottom: 20px;
+
+  text-shadow: 0 0 15px rgba(0,255,200,0.7);
+}
+
+.card h3{
+
+  font-size: 1rem;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: var(--text);
+
+  margin-bottom: 20px;
+}
+
+.metric{
+
+  font-family: 'Roboto Mono', monospace;
+
+  font-size: 3rem;
+
+  font-weight: 700;
+
+  color: var(--primary);
+
+  margin-bottom: 15px;
+
+  text-shadow:
+    0 0 12px rgba(0,255,200,0.8),
+    0 0 25px rgba(0,255,200,0.3);
+}
+
+.card p{
+
+  color: var(--text);
+
+  line-height: 1.8;
+
+  font-size: 0.95rem;
+}
+
+/* ===== BLOCO DESTAQUE ===== */
+
+.destaque{
+
+  background: rgba(255,255,255,0.03);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 24px;
+
+  padding: 40px;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.20);
+}
+
+.destaque h2{
+
+  font-size: clamp(2rem, 4vw, 3rem);
+
+  margin-bottom: 25px;
+
+  text-transform: uppercase;
+}
+
+.destaque p{
+
+  color: var(--text);
+
+  line-height: 1.9;
+
+  margin-bottom: 20px;
+}
+
+/* ===== AÇÕES ESG ===== */
+
+.actions{
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 25px;
+}
+
+.actions h2{
+
+  text-align: center;
+
+  font-size: clamp(1.8rem, 3vw, 3rem);
+
+  text-transform: uppercase;
+}
+
+.action-list{
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.action-item{
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 18px;
+
+  padding: 25px;
+
+  background: rgba(255,255,255,0.03);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 18px;
+
+  transition: 0.3s ease;
+}
+
+.action-item:hover{
+
+  border-color: rgba(0,255,200,0.3);
+
+  transform: translateX(6px);
+}
+
+.bullet{
+
+  color: var(--primary);
+
+  font-size: 1.2rem;
+
+  margin-top: 3px;
+
+  text-shadow: var(--shadow);
+}
+
+.action-item p{
+
+  color: var(--text);
+
+  line-height: 1.8;
+}
+
+.action-item strong{
+
+  color: var(--white);
+}
+
+/* ===== RODAPÉ ===== */
+
+footer{
 
   margin-top: 60px;
 
-  border-top: 2px solid #22c55e;
+  text-align: center;
 
-  font-size: 0.95rem;
+  padding: 40px 20px;
 
-  letter-spacing: 0.5px;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
+
+footer p{
+
+  color: var(--primary);
+
+  font-size: clamp(1rem, 2vw, 1.5rem);
+
+  font-weight: 600;
+
+  margin-bottom: 15px;
+
+  line-height: 1.7;
+
+  text-shadow:
+    0 0 10px rgba(0,255,200,0.4);
+}
+
+footer span{
+
+  color: var(--text);
+
+  font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media(max-width: 950px){
+
+  .cards{
+    grid-template-columns: 1fr;
+  }
+
+  main{
+    gap: 40px;
+  }
+
+  .card{
+    padding: 30px 24px;
+  }
+
+}
+
+@media(max-width: 600px){
+
+  body{
+    padding: 25px 15px;
+  }
+
+  header p{
+    font-size: 1rem;
+  }
+
+  .impact{
+    padding: 25px 20px;
+  }
+
+  .action-item{
+    padding: 20px;
+  }
+
+  .destaque{
+    padding: 30px 22px;
+  }
+
+}
+
