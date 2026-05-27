@@ -135,7 +135,7 @@ img{
 
  width: 80%;
 
- height: 400px;
+ height: 500px;
 
  object-fit: cover;
 
@@ -242,6 +242,7 @@ img{
   position: relative;
 
   z-index: 2;
+
 }
 
 .icon{
@@ -406,6 +407,53 @@ img{
 .action-item strong{
 
   color: var(--white);
+}
+
+form{
+    width: 50%;
+    border: 1px solid rgba(0,255,200,0.4);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+form h2{
+    font-size: medium;
+    text-align: justify;
+    color: white;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+}
+
+form label{
+
+}
+
+form input {
+
+}
+
+form button{
+  background-color: #2d6a4f;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+form button:hover{
+  background-color: #40916c;
+  transform: scale(1.05);
+}
+
+footer {
+
 }
 
 /* ===== RODAPÉ ===== */
