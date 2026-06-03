@@ -131,6 +131,12 @@ main{
 
 /* ===== IMAGEM ===== */
 
+
+.imagem-container {
+    text-align: center; 
+    width: 100%;
+}
+
 img{
 
  width: 80%;
@@ -144,6 +150,13 @@ img{
  margin: 0 auto;
 
  border-radius: 20px;
+}
+
+.creditos {
+    display: block; 
+    font-size: 12px;
+    color: #a7b5b0; 
+    font-style: italic;
 }
 
 /* ===== FRASE IMPACTO ===== */
@@ -411,50 +424,73 @@ img{
 
 form{
     width: 50%;
+    margin: 2rem auto;
+    background: rgba(255,255,255,0.05);
     border: 1px solid rgba(0,255,200,0.4);
     border-radius: 1rem;
-    padding: 1rem;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0,255,200,0.15);
 }
 
 form h2{
-    font-size: medium;
-    text-align: justify;
+    font-size: 1.8rem;
+    text-align: center;
     color: white;
+    margin-bottom: 1.5rem;
 }
 
 form div{
     display: flex;
     flex-direction: column;
-    margin: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 form label{
-
+    color: #b7e4c7;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
 }
 
-form input {
+form input{
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-size: 1rem;
+    transition: 0.3s;
+}
 
+form input::placeholder{
+    color: rgba(255,255,255,0.6);
+}
+
+form input:focus{
+    outline: none;
+    border-color: #52b788;
+    box-shadow: 0 0 10px rgba(82,183,136,0.5);
 }
 
 form button{
-  background-color: #2d6a4f;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s ease;
+    background-color: #2d6a4f;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 1rem;
 }
 
 form button:hover{
-  background-color: #40916c;
-  transform: scale(1.05);
+    background-color: #40916c;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(64,145,108,0.4);
 }
 
-footer {
-
-}
 
 /* ===== RODAPÉ ===== */
 
